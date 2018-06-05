@@ -43,7 +43,7 @@ def titre(query):
     p = []
     for i,j in f:
       p.append(types.InlineQueryResultPhoto(id = 'j', photo_url = i, thumb_url = i))
-    bot.answer_inline_query(qid, [p], cache_time = 1)
+    bot.answer_inline_query(qid, p, cache_time = 1)
    
 
 if __name__ == '__main__':
