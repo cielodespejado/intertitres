@@ -42,7 +42,7 @@ def titre(query):
     f = browse.get()
     p = []
     for i,j in f:
-      p.append(types.InlineQueryResultPhoto(id = 'i', photo_url = j, thumb_url = j))
+      p.append(types.InlineQueryResultPhoto(id = 'j', photo_url = i, thumb_url = i))
     bot.answer_inline_query(qid, [p], cache_time = 1)
    
 
