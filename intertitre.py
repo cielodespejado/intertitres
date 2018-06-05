@@ -1,7 +1,6 @@
 import configparser
 import telebot
 from telebot import types
-from telebot import InlineQueryResultPhoto
 import browse
 
 ##import time
