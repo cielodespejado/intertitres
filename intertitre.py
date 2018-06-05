@@ -36,7 +36,7 @@ def help(m):
         help_text += commands[key] + '\n'
     bot.send_message(cid, help_text)  
 
-@bot.inline_handler(func=lambda query: len(query.query) > 0)
+@bot.inline_handler(func=lambda query: len(query.query))
 def titre(query):
     qid = query.id
     f = browse.get()
