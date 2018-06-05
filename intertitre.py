@@ -41,7 +41,9 @@ def help(m):
 def titre(query):
     qid = query.id
     f = browse.get()
-    bot.send_photo(qid, f[0])
+    p = InlineQueryResultPhoto(type = photo; photo_url = f[0])
+    bot.answerInlineQuery(qid, p)
+   
 
 if __name__ == '__main__':
     bot.polling(none_stop=True) 
