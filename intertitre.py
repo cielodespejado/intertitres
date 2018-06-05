@@ -42,7 +42,7 @@ def help(m):
 def titre(query):
     qid = query.id
     f = browse.get()
-    p = InlineQueryResultPhoto(type = photo, photo_url = f[0])
+    p = InlineQueryResultPhoto(type = 'photo', photo_url = f[0])
     bot.answerInlineQuery(qid, p)
    
 
