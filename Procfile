@@ -1,1 +1,1 @@
-bot: python intertitres.py
+bot: python intertitre.py
