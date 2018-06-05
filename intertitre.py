@@ -1,6 +1,7 @@
 import configparser
 import telebot
 from telebot import types
+from telegram import InlineQueryResult
 import browse
 
 ##import time
@@ -41,7 +42,7 @@ def help(m):
 def titre(query):
     qid = query.id
     f = browse.get()
-    p = input_message_content(type = photo, photo_url = f[0])
+    p = InlineQueryResultPhoto(type = photo, photo_url = f[0])
     bot.answerInlineQuery(qid, p)
    
 
