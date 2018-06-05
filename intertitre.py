@@ -36,12 +36,14 @@ def help(m):
         help_text += commands[key] + '\n'
     bot.send_message(cid, help_text)  
 
-@bot.inline_handler(func=lambda query: len(query.query))
+@bot.inline_handler(func=lambda query: len(query.query) > 0)
 def titre(query):
     qid = query.id
     f = browse.get()
-    p = types.InlineQueryResultPhoto(id = '1', photo_url = f[0], thumb_url = f[0])
-    bot.answer_inline_query(qid, [p])
+    p = []
+    for i,j in f:
+      p.append(types.InlineQueryResultPhoto(id = 'i', photo_url = j, thumb_url = j))
+    bot.answer_inline_query(qid, [p], cache_time = 1)
    
 
 if __name__ == '__main__':
