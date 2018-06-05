@@ -1,7 +1,7 @@
 import configparser
 import telebot
 from telebot import types
-from telegram import InlineQueryResult
+from telebot import InlineQueryResultPhoto
 import browse
 
 ##import time
