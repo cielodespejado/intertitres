@@ -25,13 +25,12 @@ commands = {  'start': 'Описание бота',
 @bot.message_handler(commands=['start'])
 def start(m):
     cid = m.chat.id
-    bot.send_message(cid, 'Привет, добро пожаловать')
-    help(m)  
+    bot.send_message(cid, 'Привет, этот бот подгружает случайный титр с сайта http://intertitre.togdazine.ru/')
 
 @bot.message_handler(commands=['help'])
 def help(m):
     cid = m.chat.id
-    help_text = 'Доступны следующие команды: \n'
+    help_text = 'Доступны команды: \n'
     for key in commands:  
         help_text += '/' + key + ': '
         help_text += commands[key] + '\n'
@@ -42,7 +41,7 @@ def titre(query):
     qid = query.id
     f = browse.get()
     p = types.InlineQueryResultPhoto(id = '1', photo_url = f[0], thumb_url = f[0])
-    bot.answer_inline_query(qid, p)
+    bot.answer_inline_query(qid, [p])
    
 
 if __name__ == '__main__':
