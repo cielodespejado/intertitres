@@ -19,10 +19,6 @@ def start(m):
 @bot.message_handler(commands=['help'])
 def help(m):
     cid = m.chat.id
-##    help_text = 'Доступны команды: \n'
-##    for key in commands:  
-##        help_text += '/' + key + ': '
-##        help_text += commands[key] + '\n'
     bot.send_message(cid, 'Как это работает: после вызова бота введите любой символ в поле сообщения.')  
 
 @bot.inline_handler(func=lambda query: len(query.query) > 0)
@@ -31,7 +27,7 @@ def titre(query):
     f = browse.get()
     p = []
     for i,j in enumerate(f):
-      p.append(types.InlineQueryResultPhoto(id = i, photo_url = j, thumb_url = j))
+      p.append(types.InlineQueryResultPhoto(id = i, photo_url = j, thumb_url = j, photo_width = 625, photo_height = 469))
     bot.answer_inline_query(qid, p, cache_time = 1)
    
 
